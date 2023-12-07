@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  content: MyString
+  done: false
+  deadline: 2023-12-07
+
+two:
+  user: two
+  content: MyString
+  done: false
+  deadline: 2023-12-07
