@@ -47,3 +47,7 @@ group :development do
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
 
+
+gem "graphql", "~> 2.1"
+
+gem "graphiql-rails"
