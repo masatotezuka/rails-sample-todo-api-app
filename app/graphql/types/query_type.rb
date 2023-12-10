@@ -2,13 +2,7 @@
 
 module Types
   class QueryType < Types::BaseObject
-    field :user, Types::UserType, null: false do
-      argument :id, ID, required: true
-    end
-
-    def user(id:)
-      User.find(id)
-    end
+    field :user, resolver: Resolvers::UserResolver
 
     field :users, resolver: Resolvers::UsersResolver
 
