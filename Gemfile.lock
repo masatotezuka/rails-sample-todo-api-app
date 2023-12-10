@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    abbrev (0.1.1)
     actioncable (7.1.2)
       actionpack (= 7.1.2)
       activesupport (= 7.1.2)
@@ -98,6 +99,10 @@ GEM
       sprockets-rails
     graphql (2.1.7)
       racc (~> 1.4)
+    haml (6.2.4)
+      temple (>= 0.8.2)
+      thor
+      tilt
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -133,6 +138,11 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    prettier (4.0.3)
+      syntax_tree (>= 4.0.1)
+      syntax_tree-haml (>= 2.0.0)
+      syntax_tree-rbs (>= 0.2.0)
+    prettier_print (1.2.1)
     psych (5.1.1.1)
       stringio
     puma (6.4.0)
@@ -176,6 +186,8 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.1.0)
+    rbs (3.3.2)
+      abbrev
     rdoc (6.6.0)
       psych (>= 4.0.0)
     reline (0.4.1)
@@ -192,7 +204,19 @@ GEM
     sqlite3 (1.6.9-arm64-darwin)
     sqlite3 (1.6.9-x86_64-linux)
     stringio (3.1.0)
+    syntax_tree (6.2.0)
+      prettier_print (>= 1.2.0)
+    syntax_tree-haml (4.0.3)
+      haml (>= 5.2)
+      prettier_print (>= 1.2.1)
+      syntax_tree (>= 6.0.0)
+    syntax_tree-rbs (1.0.0)
+      prettier_print
+      rbs
+      syntax_tree (>= 2.0.1)
+    temple (0.10.3)
     thor (1.3.0)
+    tilt (2.3.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -213,9 +237,14 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   graphiql-rails
   graphql (~> 2.1)
+  prettier
+  prettier_print
   puma (>= 5.0)
   rails (~> 7.1.2)
   sqlite3 (~> 1.4)
+  syntax_tree
+  syntax_tree-haml
+  syntax_tree-rbs
   tzinfo-data
 
 RUBY VERSION
