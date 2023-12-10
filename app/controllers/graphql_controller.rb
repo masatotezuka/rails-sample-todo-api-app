@@ -14,7 +14,13 @@ class GraphqlController < ApplicationController
       # Query context goes here, for example:
       # current_user: current_user,
     }
-    result = RailsSampleTodoApiAppSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    result =
+      RailsSampleTodoApiAppSchema.execute(
+        query,
+        variables: variables,
+        context: context,
+        operation_name: operation_name,
+      )
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?
@@ -27,11 +33,7 @@ class GraphqlController < ApplicationController
   def prepare_variables(variables_param)
     case variables_param
     when String
-      if variables_param.present?
-        JSON.parse(variables_param) || {}
-      else
-        {}
-      end
+      variables_param.present? ? JSON.parse(variables_param) || {} : {}
     when Hash
       variables_param
     when ActionController::Parameters
