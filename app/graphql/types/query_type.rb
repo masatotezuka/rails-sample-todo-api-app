@@ -6,6 +6,10 @@ module Types
 
     field :users, resolver: Resolvers::UsersResolver
 
+    field :task, resolver: Resolvers::TaskResolver
+
+    field :tasks, resolver: Resolvers::TasksResolver
+
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
     end
